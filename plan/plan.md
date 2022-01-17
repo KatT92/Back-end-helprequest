@@ -1,6 +1,7 @@
 ## Queue logging system
 
 ## Front-end - REACT - npx create-react-app
+
     Form:
     Text boxes, to write your name, room number, problem, what you've tried
     Submit button
@@ -10,8 +11,9 @@
 
     ## Tracking progress
     Fetch data from the back-end/DB , displaying it
-    
+
 ## connect react to database
+
     npx express-generator?
     research how to connect react to a back-end
 
@@ -27,11 +29,14 @@
     CREATE, READ, UPDATE, DELETE
     Get the data from database
 
-    website.com/id, date, name (req.query, req.body, req.params etc) 
+    website.com/id, date, name (req.query, req.body, req.params etc)
     GET data from the database
 
     environment variables
 
 [{name: x, roomnp: number, problem:text}]
 
+## Resources
 
+How to link react with express
+https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
