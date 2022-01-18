@@ -12,6 +12,9 @@
     ## Tracking progress
     Fetch data from the back-end/DB , displaying it
 
+    keys: nanoid()
+
+
 ## connect react to database
 
     npx express-generator?
@@ -20,7 +23,7 @@
 ## Back-end
 
     Connect the submit button on form, to the back-end, and add it to database
-        - Add date automatically, or manually?
+        MANUAL - Add date automatically, or manually? (or use prebuilt date function)
         POST? - populate
 
     SQL/Heroku back-end
@@ -40,3 +43,11 @@
 
 How to link react with express
 https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
+
+
+
+https://trello.com/b/vQhOrH6F/help-app
+
+
+npm i --save cors
+set as no-cors -- maybe add cors later in the week
