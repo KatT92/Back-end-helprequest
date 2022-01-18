@@ -1,7 +1,4 @@
-import db from "../../index.js";
-
 import query from '../index.js';
-import data from '../../../data.js'
 
 const sqlString = 
 `CREATE TABLE IF NOT EXISTS help 
