@@ -1,9 +1,16 @@
-import db from "../../connection.js";
+import db from "../../index.js";
 
-const response = db.query(
-  `CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, username TEXT, first_name TEXT, last_name TEXT);`
-);
+import query from '../index.js';
+import data from '../../../data.js'
 
-console.log(response);
+const sqlString = 
+`CREATE TABLE IF NOT EXISTS help 
+(id SERIAL PRIMARY KEY, fname TEXT, lname TEXT, room INT, problem TEXT, tried TEXT);`; 
 
-db.end();
+
+async function createHelpTable() {
+    const res = await query(sqlString);
+    console.log("Created books table", res)
+}
+
+createHelpTable();

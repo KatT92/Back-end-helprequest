@@ -8,6 +8,10 @@ const pool = new pg.Pool(
     user: username,
     port: dbPort,
     password: password,
+    ssl: {rejectUnauthorized: false}
 });
 
-export default pool;
+export default function query(text, params, callback) {
+    return pool.query(text, params, callback)
+  }
+
