@@ -1,6 +1,7 @@
-import { query } from "../db/connection.js";
+import query from "../db/index.js";
+import helpData from "../helpData.js";
 
-export async function getAllUsers() {
-  const result = query(`SELECT * FROM users;`);
-  return result.rows;
+export async function getAllData() {
+  const data = await query(`SELECT * FROM helpData;`);
+  return helpData;
 }
