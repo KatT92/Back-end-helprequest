@@ -3,5 +3,5 @@ import helpData from "../helpData.js";
 
 export async function getAllData() {
   const data = await query(`SELECT * FROM helpData;`);
-  return helpData;
+  return data;
 }
