@@ -12,7 +12,7 @@ async function populateHelpTable() {
 
     const response = await query(
       `INSERT INTO help (fname, lname, room, problem, tried)
-             VALUES ($1, $2, $3, $4) RETURNING title`,
+             VALUES ($1, $2, $3, $4, $5) RETURNING *`,
       [fname, lname, room, problem, tried]
     );
     console.log(response);

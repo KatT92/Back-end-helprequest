@@ -8,11 +8,12 @@ import {
 } from "../config.js";
 
 const pool = new pg.Pool({
-  host: databaseHost,
-  database: databaseName,
-  user: username,
-  port: dbPort,
-  password: password,
+  connectionString: process.env.DATABASE_URL,
+  // host: databaseHost,
+  // database: databaseName,
+  // user: username,
+  // port: dbPort,
+  // password: password,
   ssl: { rejectUnauthorized: false },
 });
 
