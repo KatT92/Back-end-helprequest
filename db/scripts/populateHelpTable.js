@@ -20,5 +20,6 @@ async function populateHelpTable() {
   }
 }
 
+populateHelpTable()
 db.end()
 
