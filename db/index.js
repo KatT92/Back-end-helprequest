@@ -4,11 +4,14 @@ import {
   databaseName,
   username,
   dbPort,
+  dbUrl,
   password,
 } from "../config.js";
 
+
+
 const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: dbUrl,
   // host: databaseHost,
   // database: databaseName,
   // user: username,
@@ -17,6 +20,9 @@ const pool = new pg.Pool({
   ssl: { rejectUnauthorized: false },
 });
 
-export default function query(text, params, callback) {
-  return pool.query(text, params, callback);
-}
+export default pool;
+
+
+// export default function query(text, params, callback) {
+//   return pool.query(text, params, callback);
+// }

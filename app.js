@@ -6,9 +6,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import logger from "morgan";
 
-import router from "./routes/users.js";
+import helpRouter from "./routes/helpData.js";
 
-import usersRouter from "./routes/users.js";
 import testAPIRouter from "./routes/testAPI.js";
 
 const app = express();
@@ -22,7 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // app.use("/users", usersRouter);
 // app.use("/testAPI", testAPIRouter);
-app.use("/helpData", router);
+app.use("/helpData", helpRouter);
 
 app.use(function (req, res, next) {
   res

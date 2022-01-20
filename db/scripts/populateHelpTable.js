@@ -1,5 +1,6 @@
+import { dbUrl } from "../../config.js";
 import helpData from "../../helpData.js";
-import query from "../index.js";
+import db from "../index.js";
 
 async function populateHelpTable() {
   for (let i = 0; i < helpData.length; i++) {
@@ -10,7 +11,7 @@ async function populateHelpTable() {
     const tried = helpData[i].tried;
     // const countdown = help[i].countdown;
 
-    const response = await query(
+    const response = await db.query(
       `INSERT INTO help (fname, lname, room, problem, tried)
              VALUES ($1, $2, $3, $4, $5) RETURNING *`,
       [fname, lname, room, problem, tried]
@@ -18,4 +19,7 @@ async function populateHelpTable() {
     console.log(response);
   }
 }
-populateHelpTable();
+
+//populateHelpTable();
+
+db.end();
