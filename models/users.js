@@ -1,9 +1,24 @@
-import db from "../db/index.js";
-// import helpData from "../helpData.js";
+
+import query from "../db/index.js";
+
 
 export async function getAllData() {
   const data = await db.query(`SELECT * FROM help;`);
   return data;
 }
 
-getAllData()
+export async function getAllDataById(id) {
+  const data = await query(`SELECT * FROM id WHERE id =$1;`, [id]);
+  return data.rows;
+}
+
+export async function getHelpByFname(fname) {
+  const data = await query(
+    `SELECT * FROM help WHERE fnsme ILIKE '%' || $1 || '%';`,
+    [fname]
+  );
+  return data.rows;
+}
+
+
+
