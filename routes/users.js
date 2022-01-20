@@ -1,41 +1,35 @@
-
 import express from "express";
 const router = express.Router();
 
 import { getAllData, getAllDataById, getHelpByFname } from "../models/users.js";
 // import helpData from "../helpData.js"
 
-import helpData from '../helpData.js'
+// import helpData from '../helpData.js'
 
 /* GET users listing. */
 router.get("/", async function (req, res, next) {
-
-  // const data = await getAllData();
-  const data = helpData
+  console.log("Running...");
+  const data = await getAllData();
   res.json({
     success: true,
-    payload: data
+    payload: data,
   });
 });
 
 router.post("/", async function (req, res, next) {
-  // const data = await getAllData();
-  const data = req.params
-  console.log("d", data)
-  const data2 = req.body
-  console.log("d2", data2)
+  const data = await req.params;
+  console.log("d", data);
+  const data2 = await req.body;
+  console.log("d2", data2);
   res.json({
     success: true,
     payload1: data,
-    payload2: data2
+    payload2: data2,
   });
 });
 
-  console.log("Running...");
-
-  const allHelpData = await getAllData();
-  res.json({ success: true, payload: allHelpData });
-});
+// const allHelpData = await getAllData();
+// res.json({ success: true, payload: allHelpData });
 
 // router.get("/", async (req, res) => {
 //   const { fname, author } = req.query;
@@ -66,7 +60,6 @@ router.post("/", async function (req, res, next) {
 //     payload: requestedHelp,
 //   });
 // });
-
 
 // router.get("/:id", async function (req, res) {
 //   const { id } = req.params;

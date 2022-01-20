@@ -12,7 +12,7 @@ async function populateHelpTable() {
     // const countdown = help[i].countdown;
 
     const response = await query(
-      `INSERT INTO help (date, fname, lname, room, problem, tried)
+      `INSERT INTO helpTable (date, fname, lname, room, problem, tried)
              VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
       [date, fname, lname, room, problem, tried]
     );
@@ -20,6 +20,4 @@ async function populateHelpTable() {
   }
 }
 
-
-populateHelpTable()
-
+populateHelpTable();

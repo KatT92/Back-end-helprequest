@@ -1,6 +1,6 @@
 import query from "../index.js";
 
-const sqlString = `CREATE TABLE IF NOT EXISTS help 
+const sqlString = `CREATE TABLE IF NOT EXISTS helpTable 
 (id SERIAL PRIMARY KEY, date TEXT, fname TEXT, lname TEXT, room INT, problem TEXT, tried TEXT);`;
 
 async function createHelpTable() {
