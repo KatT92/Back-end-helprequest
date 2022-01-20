@@ -11,7 +11,7 @@ async function populateHelpTable() {
     const tried = helpData[i].tried;
     // const countdown = help[i].countdown;
 
-    const response = await db.query(
+    const response = await query(
       `INSERT INTO help (fname, lname, room, problem, tried)
              VALUES ($1, $2, $3, $4, $5) RETURNING *`,
       [fname, lname, room, problem, tried]
@@ -20,6 +20,5 @@ async function populateHelpTable() {
   }
 }
 
-//populateHelpTable();
+db.end()
 
-db.end();

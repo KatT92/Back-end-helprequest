@@ -5,3 +5,4 @@ export async function getAllData() {
   const data = await query(`SELECT * FROM help;`);
   return data;
 }
+

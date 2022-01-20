@@ -22,7 +22,6 @@ const pool = new pg.Pool({
 
 export default pool;
 
-
 // export default function query(text, params, callback) {
 //   return pool.query(text, params, callback);
 // }
