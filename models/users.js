@@ -1,6 +1,4 @@
-
 import query from "../db/index.js";
-
 
 export async function getAllData() {
   const data = await query(`SELECT * FROM help;`);
@@ -14,11 +12,8 @@ export async function getAllDataById(id) {
 
 export async function getHelpByFname(fname) {
   const data = await query(
-    `SELECT * FROM help WHERE fnsme ILIKE '%' || $1 || '%';`,
+    `SELECT * FROM help WHERE fname ILIKE '%' || $1 || '%';`,
     [fname]
   );
   return data.rows;
 }
-
-
-

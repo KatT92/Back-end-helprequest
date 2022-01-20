@@ -1,4 +1,3 @@
-import { dbUrl } from "../../config.js";
 import helpData from "../../helpData.js";
 import query from "../index.js";
 
@@ -21,6 +20,6 @@ async function populateHelpTable() {
   }
 }
 
-populateHelpTable()
 
+populateHelpTable()
 
