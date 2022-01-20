@@ -1,5 +1,6 @@
+import { dbUrl } from "../../config.js";
 import helpData from "../../helpData.js";
-import query from "../index.js";
+import db from "../index.js";
 
 async function populateHelpTable() {
   for (let i = 0; i < helpData.length; i++) {
@@ -18,4 +19,7 @@ async function populateHelpTable() {
     console.log(response);
   }
 }
-populateHelpTable();
+
+populateHelpTable()
+db.end()
+

@@ -4,18 +4,18 @@ import path from "path";
 import cors from "cors";
 import logger from "morgan";
 
+
 import router from "./routes/users.js";
 
 import usersRouter from "./routes/users.js";
+
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// app.use("/users", usersRouter);
-// app.use("/testAPI", testAPIRouter);
-app.use("/helpData", router);
+app.use("/users", usersRouter);
 
 app.use(function (req, res, next) {
   res
