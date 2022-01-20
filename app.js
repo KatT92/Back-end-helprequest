@@ -8,8 +8,6 @@ import logger from "morgan";
 
 import helpRouter from "./routes/helpData.js";
 
-import testAPIRouter from "./routes/testAPI.js";
-
 const app = express();
 
 app.use(logger("dev"));
@@ -20,7 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // app.use("/users", usersRouter);
-// app.use("/testAPI", testAPIRouter);
+
 app.use("/helpData", helpRouter);
 
 app.use(function (req, res, next) {
