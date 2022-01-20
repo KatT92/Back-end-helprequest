@@ -3,7 +3,7 @@ import query from "../db/index.js";
 
 
 export async function getAllData() {
-  const data = await db.query(`SELECT * FROM help;`);
+  const data = await query(`SELECT * FROM help;`);
   return data;
 }
 
