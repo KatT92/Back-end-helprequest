@@ -7,5 +7,5 @@ async function createHelpTable() {
   const response = await db.query(sqlString);
   console.log("Created books table", response);
 }
-
+createHelpTable()
 db.end()
