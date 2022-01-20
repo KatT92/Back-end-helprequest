@@ -1,7 +1,9 @@
 import pg from "pg";
+import "dotenv/config";
 
 const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString:
+    "postgres://whsrdosnytuazf:b23712db6f28bf784e59837a85281f23ab6bdbd9070261862f9285036960a2de@ec2-34-246-155-237.eu-west-1.compute.amazonaws.com:5432/d5aee003nu79j4",
   // host: databaseHost,
   // database: databaseName,
   // user: username,
