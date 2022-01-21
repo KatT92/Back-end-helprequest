@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 
-import { getAllData, getAllDataById, getHelpByFname } from "../models/users.js";
+import { getAllData, getAllDataById, getHelpByFname, addToTable } from "../models/users.js";
 // import helpData from "../helpData.js"
 
 // import helpData from '../helpData.js'
@@ -17,16 +17,12 @@ router.get("/", async function (req, res, next) {
 });
 
 router.post("/", async function (req, res, next) {
-  const data = await req.params;
-  console.log("d", data);
-  const data2 = await req.body;
-  console.log("d2", data2);
-  res.json({
-    success: true,
-    payload1: data,
-    payload2: data2,
-  });
+  let newHelpData = req.body
+  console.log(newHelpData)
+  addToTable(newHelpData)
+  res.send({message:"success2!", payload: req.body});
 });
+
 
 // const allHelpData = await getAllData();
 // res.json({ success: true, payload: allHelpData });

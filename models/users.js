@@ -17,3 +17,21 @@ export async function getHelpByFname(fname) {
   );
   return data.rows;
 }
+
+export async function addToTable(data) {
+
+    const date = data.date;
+    const fname = data.fname;
+    const lname = data.lname;
+    const room = data.room;
+    const problem = data.problem;
+    const tried = data.tried;
+   
+    const response = await query(
+      `INSERT INTO helpTable (date, fname, lname, room, problem, tried)
+             VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+      [date, fname, lname, room, problem, tried]
+    );
+    console.log(response);
+  
+}
